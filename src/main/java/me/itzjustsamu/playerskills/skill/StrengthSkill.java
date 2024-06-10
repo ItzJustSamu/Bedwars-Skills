@@ -22,7 +22,7 @@ import java.util.List;
 public class StrengthSkill extends Skill {
 
     public StrengthSkill(PlayerSkills plugin) {
-        super(plugin, "Strength", "strength", 20, 12);
+        super(plugin, "Strength", "strength", 20, 10);
     }
 
     @EventHandler

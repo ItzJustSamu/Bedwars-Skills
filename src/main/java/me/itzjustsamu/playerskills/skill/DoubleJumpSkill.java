@@ -44,7 +44,7 @@ public class DoubleJumpSkill extends Skill implements Listener {
     private final HashMap<Player, Boolean> Jumped = new HashMap<>();
 
     public DoubleJumpSkill(PlayerSkills plugin) {
-        super(plugin, "DoubleJump", "doublejump", 5, 5);
+        super(plugin, "DoubleJump", "doublejump", 5, 4);
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 

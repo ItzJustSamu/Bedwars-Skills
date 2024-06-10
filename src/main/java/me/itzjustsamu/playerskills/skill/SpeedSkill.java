@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 public class SpeedSkill extends Skill implements Listener {
 
     public SpeedSkill(PlayerSkills plugin) {
-        super(plugin, "Speed", "speed", 10, 11);
+        super(plugin, "Speed", "speed", 10, 9);
         startSpeedUpdateTask();
     }
 

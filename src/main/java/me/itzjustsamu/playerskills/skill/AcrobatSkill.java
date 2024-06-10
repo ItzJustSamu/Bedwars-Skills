@@ -23,7 +23,7 @@ import java.util.UUID;
 public class AcrobatSkill extends Skill {
 
     public AcrobatSkill(PlayerSkills plugin) {
-        super(plugin, "Acrobat", "acrobat", 20, 1);
+        super(plugin, "Acrobat", "acrobat", 20, 0);
     }
 
     @EventHandler

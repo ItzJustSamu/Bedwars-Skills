@@ -27,7 +27,7 @@ import java.util.*;
 public class WoolReturnSkill extends Skill {
 
     public WoolReturnSkill(PlayerSkills plugin) {
-        super(plugin, "WOOlRETURN", "woolreturn", 20, 14);
+        super(plugin, "Wool Return", "wool return", 20, 12);
     }
 
     @EventHandler

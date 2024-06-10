@@ -27,7 +27,7 @@ import java.util.*;
 public class WoodReturnSkill extends Skill {
 
     public WoodReturnSkill(PlayerSkills plugin) {
-        super(plugin, "WOODRETURN", "woodreturn", 20, 13);
+        super(plugin, "Wood Return", "wood return", 20, 11);
     }
 
     @EventHandler
