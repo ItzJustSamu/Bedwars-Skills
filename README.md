@@ -1,2 +1,2 @@
-# PlayerSkills-Bedwars
+# BedwarsSkills
 Skills for Bedwars
