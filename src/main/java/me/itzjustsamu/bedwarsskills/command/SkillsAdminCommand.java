@@ -2,7 +2,7 @@ package me.itzjustsamu.bedwarsskills.command;
 
 import com.google.common.collect.ImmutableList;
 import me.itzjustsamu.bedwarsskills.Permissions;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.skill.Skill;
 import org.bukkit.Bukkit;
@@ -21,9 +21,9 @@ import java.util.Set;
 public class SkillsAdminCommand extends Command implements TabCompleter {
 
     private static final List<String> SUBCOMMANDS = List.of("setskill", "givepoints", "view", "fullreset", "settings");
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
 
-    public SkillsAdminCommand(BedwarsSkills plugin) {
+    public SkillsAdminCommand(BedWarsSkills plugin) {
         super("skillsadmin", "Admin control for PlayerSkills", "/skillsadmin", SUBCOMMANDS);
         setPermission(Permissions.ADMIN.getName());
         this.plugin = plugin;

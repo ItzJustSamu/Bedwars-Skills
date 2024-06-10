@@ -5,7 +5,7 @@ import me.hsgamer.hscore.bukkit.item.modifier.LoreModifier;
 import me.hsgamer.hscore.bukkit.item.modifier.NameModifier;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -25,7 +25,7 @@ import java.util.*;
 
 public class WoolReturnSkill extends Skill {
 
-    public WoolReturnSkill(BedwarsSkills plugin) {
+    public WoolReturnSkill(BedWarsSkills plugin) {
         super(plugin, "Wool Return", "wool return", 20, 12);
     }
 

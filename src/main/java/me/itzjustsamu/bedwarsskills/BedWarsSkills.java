@@ -30,7 +30,7 @@ import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 
-public class BedwarsSkills extends BasePlugin {
+public class BedWarsSkills extends BasePlugin {
     public static final Map<String, Supplier<FundingSource>> FUNDING_SOURCE_MAP = new CaseInsensitiveStringHashMap<>();
     public static final Map<String, Supplier<PlayerStorage>> PLAYER_STORAGE_MAP = new CaseInsensitiveStringHashMap<>();
 

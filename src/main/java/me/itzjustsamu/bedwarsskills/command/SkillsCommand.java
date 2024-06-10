@@ -2,7 +2,7 @@ package me.itzjustsamu.bedwarsskills.command;
 
 import me.hsgamer.hscore.bukkit.utils.MessageUtils;
 import me.itzjustsamu.bedwarsskills.Permissions;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.config.MessageConfig;
 import me.itzjustsamu.bedwarsskills.menu.SkillsMenu;
@@ -18,8 +18,8 @@ import java.util.List;
 
 public class SkillsCommand extends Command {
 
-    private final BedwarsSkills plugin;
-    public SkillsCommand(BedwarsSkills plugin) {
+    private final BedWarsSkills plugin;
+    public SkillsCommand(BedWarsSkills plugin) {
         super("skills", "Open skills menu", "/skills", Arrays.asList("s", "skills", "skill"));
         setPermission(Permissions.COMMAND.getName());
         this.plugin = plugin;

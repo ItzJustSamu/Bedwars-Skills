@@ -1,6 +1,6 @@
 package me.itzjustsamu.bedwarsskills.util;
 
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import org.bukkit.Bukkit;
 
 import java.io.BufferedReader;
@@ -13,10 +13,10 @@ import java.net.URLConnection;
 import java.util.function.Consumer;
 
 public class Updater {
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
     private final int resourceId;
 
-    public Updater(BedwarsSkills plugin, int resourceId) {
+    public Updater(BedWarsSkills plugin, int resourceId) {
         this.plugin = plugin;
         this.resourceId = resourceId;
     }

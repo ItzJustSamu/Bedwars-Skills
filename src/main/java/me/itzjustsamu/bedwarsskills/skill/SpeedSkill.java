@@ -5,7 +5,7 @@ import me.hsgamer.hscore.bukkit.item.BukkitItemBuilder;
 import me.hsgamer.hscore.bukkit.item.modifier.LoreModifier;
 import me.hsgamer.hscore.bukkit.item.modifier.NameModifier;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -22,7 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class SpeedSkill extends Skill implements Listener {
 
-    public SpeedSkill(BedwarsSkills plugin) {
+    public SpeedSkill(BedWarsSkills plugin) {
         super(plugin, "Speed", "speed", 10, 9);
         startSpeedUpdateTask();
     }

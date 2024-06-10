@@ -15,7 +15,7 @@ import me.hsgamer.hscore.config.path.impl.IntegerConfigPath;
 import me.hsgamer.hscore.config.path.impl.LongConfigPath;
 import me.hsgamer.hscore.config.path.impl.StringConfigPath;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.fundingsource.FundingSource;
 import me.itzjustsamu.bedwarsskills.fundingsource.XPFundingSource;
 import me.itzjustsamu.bedwarsskills.storage.FlatFileStorage;
@@ -36,7 +36,7 @@ public class MainConfig extends PathableConfig {
 
     public static final BooleanConfigPath OPTIONS_VERBOSE = new BooleanConfigPath(new PathString("options", "verbose"), false);
     public static final StringListConfigPath OPTIONS_MENU_isWorldRestricteds = new StringListConfigPath(new PathString("options", "menu-world-restriction"), Collections.emptyList());
-    static BedwarsSkills plugin;
+    static BedWarsSkills plugin;
 
     public static final ConfigPath<PlayerStorage> OPTIONS_PLAYER_STORAGE = new StickyConfigPath<>(
             new AdvancedConfigPath<String, PlayerStorage>(new PathString("options", "player-storage"), new FlatFileStorage(plugin)) {
@@ -48,7 +48,7 @@ public class MainConfig extends PathableConfig {
 
                 @Override
                 public @Nullable PlayerStorage convert(@NotNull String rawValue) {
-                    return BedwarsSkills.PLAYER_STORAGE_MAP.getOrDefault(rawValue, () -> new FlatFileStorage(plugin)).get();
+                    return BedWarsSkills.PLAYER_STORAGE_MAP.getOrDefault(rawValue, () -> new FlatFileStorage(plugin)).get();
                 }
 
                 @Override
@@ -231,7 +231,7 @@ public class MainConfig extends PathableConfig {
 
                 @Override
                 public @Nullable FundingSource convert(@NotNull String rawValue) {
-                    return BedwarsSkills.FUNDING_SOURCE_MAP.getOrDefault(rawValue, XPFundingSource::new).get();
+                    return BedWarsSkills.FUNDING_SOURCE_MAP.getOrDefault(rawValue, XPFundingSource::new).get();
                 }
 
                 @Override

@@ -3,7 +3,7 @@ package me.itzjustsamu.bedwarsskills.storage;
 import me.hsgamer.hscore.bukkit.config.BukkitConfig;
 import me.hsgamer.hscore.config.Config;
 import me.hsgamer.hscore.config.PathString;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -16,9 +16,9 @@ public class FlatFileStorage implements PlayerStorage {
     private static final PathString POINTS_PATH = new PathString("points");
     private static final PathString RESTORED_SKILL_PATH = new PathString("restored-skills");
     private static final PathString LEVEL_PATH = new PathString("levels");
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
 
-    public FlatFileStorage(BedwarsSkills plugin) {
+    public FlatFileStorage(BedWarsSkills plugin) {
         this.plugin = plugin;
     }
 

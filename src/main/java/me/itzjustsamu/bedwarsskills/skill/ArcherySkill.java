@@ -5,7 +5,7 @@ import me.hsgamer.hscore.bukkit.item.BukkitItemBuilder;
 import me.hsgamer.hscore.bukkit.item.modifier.LoreModifier;
 import me.hsgamer.hscore.bukkit.item.modifier.NameModifier;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -21,7 +21,7 @@ import static me.itzjustsamu.bedwarsskills.util.Utils.getPercentageFormat;
 public class ArcherySkill extends Skill {
 
 
-    public ArcherySkill(BedwarsSkills plugin) {
+    public ArcherySkill(BedWarsSkills plugin) {
         super(plugin, "Archery", "archery", 20, 1);
     }
 

@@ -6,7 +6,7 @@ import me.hsgamer.hscore.bukkit.item.modifier.LoreModifier;
 import me.hsgamer.hscore.bukkit.item.modifier.NameModifier;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -24,7 +24,7 @@ import java.util.List;
 
 public class XPSkill extends Skill {
 
-    public XPSkill(BedwarsSkills plugin) {
+    public XPSkill(BedWarsSkills plugin) {
         super(plugin, "XP", "xp", 20, 13);
     }
 

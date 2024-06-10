@@ -8,7 +8,7 @@ import me.hsgamer.hscore.config.path.impl.BooleanConfigPath;
 import me.hsgamer.hscore.config.path.impl.IntegerConfigPath;
 import me.hsgamer.hscore.config.path.impl.Paths;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.config.MessageConfig;
 import me.itzjustsamu.bedwarsskills.config.SkillConfig;
@@ -27,7 +27,7 @@ import java.util.List;
 public abstract class Skill implements Listener {
 
     private final SkillConfig CONFIG;
-    private final BedwarsSkills PLUGIN;
+    private final BedWarsSkills PLUGIN;
 
     private final String NAME;
     private final String SKILL;
@@ -50,7 +50,7 @@ public abstract class Skill implements Listener {
     private IntegerConfigPath GET_LIMIT;
     private IntegerConfigPath GET_GUI_SLOT;
 
-    public Skill(BedwarsSkills BedwarsSkills, String SKILL_CONFIG_NAME, String SKILL, int SET_LIMIT, int SET_GUI_SLOT) {
+    public Skill(BedWarsSkills BedwarsSkills, String SKILL_CONFIG_NAME, String SKILL, int SET_LIMIT, int SET_GUI_SLOT) {
         this.PLUGIN = BedwarsSkills;
         this.NAME = SKILL_CONFIG_NAME;
         this.SKILL = SKILL;
@@ -143,7 +143,7 @@ public abstract class Skill implements Listener {
         return SKILL;
     }
 
-    public final BedwarsSkills getPlugin() {
+    public final BedWarsSkills getPlugin() {
         return PLUGIN;
     }
 

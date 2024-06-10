@@ -9,7 +9,7 @@ import me.hsgamer.hscore.config.PathString;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.config.path.impl.Paths;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -27,7 +27,7 @@ public class CriticalsSkill extends Skill {
     private final ConfigPath<Double> CRITICAL_MULTIPLIER = Paths.doublePath(new PathString("critical-multiplier"), 1.5D);
     private final ConfigPath<String> CRITICAL_MESSAGE = Paths.stringPath(new PathString("critical-message"), "&a*** CRITICAL HIT ***");
 
-    public CriticalsSkill(BedwarsSkills plugin) {
+    public CriticalsSkill(BedWarsSkills plugin) {
         super(plugin, "Criticals", "criticals", 20, 2);
     }
 

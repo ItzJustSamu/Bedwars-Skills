@@ -8,7 +8,7 @@ import me.hsgamer.hscore.config.PathString;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.config.path.impl.Paths;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -43,7 +43,7 @@ public class DoubleJumpSkill extends Skill implements Listener {
     private final HashMap<Player, Long> Cooldown_Map = new HashMap<>();
     private final HashMap<Player, Boolean> Jumped = new HashMap<>();
 
-    public DoubleJumpSkill(BedwarsSkills plugin) {
+    public DoubleJumpSkill(BedWarsSkills plugin) {
         super(plugin, "DoubleJump", "doublejump", 5, 4);
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }

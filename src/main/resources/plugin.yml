@@ -1,8 +1,8 @@
-name: PlayerSkills
+name: BedwarsSkills
 version: ${project.version}
-description: Player Skills offers a customizable and engaging skill progression system.
-main: me.itzjustsamu.playerskills.PlayerSkills
+description: BedwarsSkills gives a GUI for your skills.
+main: me.itzjustsamu.bedwarsskills.BedWarsSkills
 author: lmbishop, HSGamer, ItzJustSamu
-prefix: PlayerSkills
+prefix: BedwarSkills
 softdepend: [ Vault ]
 api-version: 1.13

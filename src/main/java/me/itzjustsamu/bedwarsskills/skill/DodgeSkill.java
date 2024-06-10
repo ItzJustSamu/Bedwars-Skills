@@ -9,7 +9,7 @@ import me.hsgamer.hscore.config.PathString;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.config.path.impl.Paths;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -31,7 +31,7 @@ public class DodgeSkill extends Skill {
 
     private final Map<UUID, Long> cooldowns = new HashMap<>();
 
-    public DodgeSkill(BedwarsSkills plugin) {
+    public DodgeSkill(BedWarsSkills plugin) {
         super(plugin, "Dodge", "dodge", 20, 3);
     }
 

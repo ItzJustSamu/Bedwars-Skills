@@ -2,7 +2,7 @@ package me.itzjustsamu.bedwarsskills.menu;
 
 import me.hsgamer.hscore.bukkit.config.BukkitConfig;
 import me.hsgamer.hscore.bukkit.utils.ColorUtils;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.skill.Skill;
@@ -19,13 +19,13 @@ import static me.itzjustsamu.bedwarsskills.menu.Sounds.playExperienceOrbPickupSo
 import static me.itzjustsamu.bedwarsskills.menu.Sounds.playItemBreakSound;
 
 public class SkillsMenu implements Menu {
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
     private final Player player;
     private final SPlayer sPlayer;
     private Skill clickedSkill;
     private BukkitConfig bukkitConfig;
 
-    public SkillsMenu(BedwarsSkills plugin, Player player, SPlayer sPlayer) {
+    public SkillsMenu(BedWarsSkills plugin, Player player, SPlayer sPlayer) {
         this.plugin = plugin;
         this.player = player;
         this.sPlayer = sPlayer;

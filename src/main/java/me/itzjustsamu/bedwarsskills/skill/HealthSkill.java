@@ -1,7 +1,7 @@
 package me.itzjustsamu.bedwarsskills.skill;
 
 import com.cryptomorin.xseries.XMaterial;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -31,7 +31,7 @@ public class HealthSkill extends Skill {
     private final Map<UUID, Integer> knownMaxHealth = new IdentityHashMap<>();
     private Task task;
 
-    public HealthSkill(BedwarsSkills plugin) {
+    public HealthSkill(BedWarsSkills plugin) {
         super(plugin, "Health", "health", 20, 5);
     }
 

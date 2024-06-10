@@ -2,7 +2,7 @@ package me.itzjustsamu.bedwarsskills.menu;
 
 import me.hsgamer.hscore.bukkit.scheduler.Scheduler;
 import me.hsgamer.hscore.bukkit.utils.ColorUtils;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,13 +13,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class ConfirmationMenu implements Menu {
 
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
     private final Player player;
     private final ItemStack display;
     private final Runnable callback;
     private final Menu superMenu;
 
-    public ConfirmationMenu(BedwarsSkills plugin, Player player, ItemStack display, Runnable callback, Menu superMenu) {
+    public ConfirmationMenu(BedWarsSkills plugin, Player player, ItemStack display, Runnable callback, Menu superMenu) {
         this.plugin = plugin;
         this.player = player;
         this.display = display;

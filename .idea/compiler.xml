@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PlayerSkills-BedWars" />
+        <module name="BedwarsSkills" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PlayerSkills-BedWars" target="9" />
+    </bytecodeTargetLevel>
   </component>
 </project>

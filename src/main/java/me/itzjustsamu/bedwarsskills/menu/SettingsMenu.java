@@ -2,7 +2,7 @@ package me.itzjustsamu.bedwarsskills.menu;
 
 import me.hsgamer.hscore.bukkit.config.BukkitConfig;
 import me.hsgamer.hscore.bukkit.utils.ColorUtils;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.skill.Skill;
@@ -24,7 +24,7 @@ import static me.itzjustsamu.bedwarsskills.menu.Sounds.*;
 
 public class SettingsMenu implements Menu {
 
-    private final BedwarsSkills plugin;
+    private final BedWarsSkills plugin;
     private final Skill skill;
 
     private final Player player;
@@ -33,7 +33,7 @@ public class SettingsMenu implements Menu {
     private final Map<String, Integer> toggleSkill;
     private final FlatFileStorage storage;
 
-    public SettingsMenu(BedwarsSkills plugin, Skill skill, Player player, SPlayer sPlayer, BukkitConfig config, FlatFileStorage storage) {
+    public SettingsMenu(BedWarsSkills plugin, Skill skill, Player player, SPlayer sPlayer, BukkitConfig config, FlatFileStorage storage) {
         this.plugin = plugin;
         this.skill = skill;
         this.player = player;

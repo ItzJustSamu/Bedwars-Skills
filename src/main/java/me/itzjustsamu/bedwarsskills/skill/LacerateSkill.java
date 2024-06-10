@@ -11,7 +11,7 @@ import me.hsgamer.hscore.config.PathString;
 import me.hsgamer.hscore.config.path.ConfigPath;
 import me.hsgamer.hscore.config.path.impl.Paths;
 import me.hsgamer.hscore.minecraft.item.ItemBuilder;
-import me.itzjustsamu.bedwarsskills.BedwarsSkills;
+import me.itzjustsamu.bedwarsskills.BedWarsSkills;
 import me.itzjustsamu.bedwarsskills.config.MainConfig;
 import me.itzjustsamu.bedwarsskills.player.SPlayer;
 import me.itzjustsamu.bedwarsskills.util.Utils;
@@ -42,7 +42,7 @@ public class LacerateSkill extends Skill {
 
     private final Map<LivingEntity, Task> cutEntities = new ConcurrentHashMap<>();
 
-    public LacerateSkill(BedwarsSkills plugin) {
+    public LacerateSkill(BedWarsSkills plugin) {
         super(plugin, "Lacerate", "lacerate", 20, 7);
     }
 
