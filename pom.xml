@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.itzjustsamu</groupId>
-    <artifactId>PlayerSkills-BedWars</artifactId>
+    <artifactId>BedwarsSkills-BedWars</artifactId>
     <version>1.0</version>
-    <name>PlayerSkills-BedWars</name>
+    <name>BedwarsSkills-BedWars</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -16,7 +16,7 @@
     </properties>
 
     <build>
-        <finalName>PlayerSkills-BedWars</finalName>
+        <finalName>BedwarsSkills-BedWars</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
@@ -62,11 +62,11 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.cryptomorin.xseries</pattern>
-                                    <shadedPattern>me.itzjustsamu.playerskills.lib.xseries</shadedPattern>
+                                    <shadedPattern>me.itzjustsamu.bedwarsskills.lib.xseries</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>me.hsgamer.hscore</pattern>
-                                    <shadedPattern>me.itzjustsamu.playerskills.lib.hscore</shadedPattern>
+                                    <shadedPattern>me.itzjustsamu.bedwarsskills.lib.hscore</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
