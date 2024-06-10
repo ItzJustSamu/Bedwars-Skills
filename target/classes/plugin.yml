@@ -1,0 +1,8 @@
+name: PlayerSkills
+version: 1.0
+description: Player Skills offers a customizable and engaging skill progression system.
+main: me.itzjustsamu.playerskills.PlayerSkills
+author: lmbishop, HSGamer, ItzJustSamu
+prefix: PlayerSkills
+softdepend: [ Vault ]
+api-version: 1.13
