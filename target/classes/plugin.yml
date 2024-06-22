@@ -1,8 +1,0 @@
-name: BedwarsSkills
-version: 1.1
-description: BedwarsSkills gives a GUI for your skills.
-main: me.itzjustsamu.bedwarsskills.BedWarsSkills
-author: lmbishop, HSGamer, ItzJustSamu
-prefix: BedwarSkills
-softdepend: [ Vault, PlaceholderAPI]
-api-version: 1.13
