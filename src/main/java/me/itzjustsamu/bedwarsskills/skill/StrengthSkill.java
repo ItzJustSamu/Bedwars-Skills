@@ -22,7 +22,7 @@ import java.util.List;
 public class StrengthSkill extends Skill {
 
     public StrengthSkill(BedWarsSkills plugin) {
-        super(plugin, "Strength", "strength", 20, 10);
+        super(plugin, "Strength", "strength", 20, 11);
     }
 
     @EventHandler
@@ -83,5 +83,15 @@ public class StrengthSkill extends Skill {
     public String getNextString(SPlayer player) {
         double damage = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(damage);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

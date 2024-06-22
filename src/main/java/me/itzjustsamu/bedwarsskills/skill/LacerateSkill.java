@@ -43,7 +43,7 @@ public class LacerateSkill extends Skill {
     private final Map<LivingEntity, Task> cutEntities = new ConcurrentHashMap<>();
 
     public LacerateSkill(BedWarsSkills plugin) {
-        super(plugin, "Lacerate", "lacerate", 20, 7);
+        super(plugin, "Lacerate", "lacerate", 20, 8);
     }
 
     @EventHandler
@@ -164,5 +164,15 @@ public class LacerateSkill extends Skill {
     public String getNextString(SPlayer player) {
         double damage = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(damage);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

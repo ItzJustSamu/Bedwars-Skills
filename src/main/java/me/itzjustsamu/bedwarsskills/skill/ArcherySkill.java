@@ -84,4 +84,14 @@ public class ArcherySkill extends Skill {
         double archery = (getLevel(player) + 1) * getUpgrade().getValue();
         return getPercentageFormat().format(archery);
     }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
+    }
 }

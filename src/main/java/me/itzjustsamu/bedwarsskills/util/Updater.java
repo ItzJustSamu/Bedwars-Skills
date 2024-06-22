@@ -27,7 +27,7 @@ public class Updater {
                     String currentVersion = plugin.getDescription().getVersion();
 
                     if (compareVersions(currentVersion, latestVersion) < 0) {
-                        plugin.getLogger().info("A new version of the PlayerSkills is available: " + latestVersion);
+                        plugin.getLogger().info("A new version of the Bedwars Skills is available: " + latestVersion);
                     } else if (compareVersions(currentVersion, latestVersion) > 0) {
                         plugin.getLogger().info("Experimental build: " + currentVersion);
                     } else {

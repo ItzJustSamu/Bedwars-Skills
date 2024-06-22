@@ -26,7 +26,7 @@ import java.util.*;
 public class WoolReturnSkill extends Skill {
 
     public WoolReturnSkill(BedWarsSkills plugin) {
-        super(plugin, "Wool Return", "wool return", 20, 12);
+        super(plugin, "Wool Return", "wool return", 20, 13);
     }
 
     @EventHandler
@@ -136,5 +136,15 @@ public class WoolReturnSkill extends Skill {
     public String getNextString(SPlayer player) {
         double chance = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(chance);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

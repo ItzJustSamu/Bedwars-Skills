@@ -22,7 +22,7 @@ import java.util.List;
 public class ResistanceSkill extends Skill {
 
     public ResistanceSkill(BedWarsSkills plugin) {
-        super(plugin, "Resistance", "resistance", 20, 8);
+        super(plugin, "Resistance", "resistance", 20, 9);
     }
 
     @EventHandler
@@ -83,5 +83,15 @@ public class ResistanceSkill extends Skill {
     public String getNextString(SPlayer player) {
         double damage = 100 - ((getLevel(player) + 1) * getUpgrade().getValue());
         return Utils.getPercentageFormat().format(damage);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

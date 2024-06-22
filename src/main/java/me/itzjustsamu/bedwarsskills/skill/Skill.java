@@ -31,7 +31,7 @@ public abstract class Skill implements Listener {
 
     private final String NAME;
     private final String SKILL;
-    private final ConfigPath<List<String>> isWorldRestrictedS = new StickyConfigPath<>(new StringListConfigPath(new PathString("only-in-worlds"), Collections.emptyList()));
+    private final ConfigPath<List<String>> isWorldRestricted = new StickyConfigPath<>(new StringListConfigPath(new PathString("only-in-worlds"), Collections.emptyList()));
 
     private final int LIMIT;
     private final int GUI_SLOT;
@@ -61,56 +61,68 @@ public abstract class Skill implements Listener {
 
     public final void setup() {
         CONFIG.setup();
-        GET_LIMIT = Paths.integerPath(new PathString("limit"), LIMIT);
-        GET_LIMIT.setConfig(CONFIG);
-
-        GET_GUI_SLOT = Paths.integerPath(new PathString("gui-slot"), GUI_SLOT);
-        GET_INCREMENT = Paths.integerPath(new PathString("increment"), INCREMENT);
-        GET_INCREMENT.setConfig(CONFIG);
-        GET_INCREMENTED_UPGRADE = Paths.integerPath(new PathString("incremented-upgrade"), INCREMENTED_UPGRADE);
-        GET_INCREMENTED_UPGRADE.setConfig(CONFIG);
-        GET_PRICE = Paths.integerPath(new PathString("price"), PRICE);
-        GET_PRICE.setConfig(CONFIG);
-        GET_DISABLED.setConfig(CONFIG);
-        GET_GUI_SLOT.setConfig(CONFIG);
-        isWorldRestrictedS.setConfig(CONFIG);
-        getAdditionalConfigPaths().forEach(configPath -> configPath.setConfig(CONFIG));
-        ItemBuilderConfigPath itemBuilderConfigPath = new ItemBuilderConfigPath(new PathString("display"), getDefaultItem());
-        itemBuilderConfigPath.setConfig(CONFIG);
+        initializeConfigPaths();
         CONFIG.save();
 
-        DISPLAY_ITEM = itemBuilderConfigPath.getValue();
-        DISPLAY_ITEM.addStringReplacer(StringReplacer.of((original, uuid) -> {
-            SPlayer sPlayer = SPlayer.get(uuid);
+        DISPLAY_ITEM = ITEM_CONFIG.getValue();
+        setupStringReplacer();
 
-            if (getLevel(sPlayer) >= getLimit()) {
-                original = original.replace("{next}", MainConfig.PLACEHOLDERS_NEXT_MAX.getValue())
-                        .replace("{price}", MainConfig.PLACEHOLDERS_SKILL_PRICE_MAX.getValue());
-            } else {
-                original = original.replace("{next}",  getNextString(sPlayer))
-                        .replace("{price}", Integer.toString(getPrice().getValue()));
-            }
-            original = original
-                    .replace("{prev}", getPreviousString(sPlayer))
-                    .replace("{level}", Integer.toString(getLevel(sPlayer)))
-                    .replace("{limit}", Integer.toString(getLimit())
-                    .replace("{upgrade}", Integer.toString(getUpgrade().getValue())
-            .replace("{incremented-upgrade}", Integer.toString(getIncrementedUpgrade().getValue()))));
-            return original;
-        }));
-
-        List<ConfigPath<?>> messageConfigPaths = getMessageConfigPaths();
-        if (!messageConfigPaths.isEmpty()) {
+        if (!getMessageConfigPaths().isEmpty()) {
             MessageConfig messageConfig = PLUGIN.getMessageConfig();
-            messageConfigPaths.forEach(configPath -> configPath.setConfig(messageConfig));
+            getMessageConfigPaths().forEach(configPath -> configPath.setConfig(messageConfig));
             messageConfig.save();
         }
         Bukkit.getPluginManager().registerEvents(this, PLUGIN);
     }
 
+    private void initializeConfigPaths() {
+        GET_LIMIT = createAndSetConfigPath("limit", LIMIT);
+        GET_GUI_SLOT = createAndSetConfigPath("gui-slot", GUI_SLOT);
+        GET_INCREMENT = createAndSetConfigPath("increment", INCREMENT);
+        GET_INCREMENTED_UPGRADE = createAndSetConfigPath("incremented-upgrade", INCREMENTED_UPGRADE);
+        GET_PRICE = createAndSetConfigPath("price", PRICE);
+        GET_DISABLED.setConfig(CONFIG);
+        isWorldRestricted.setConfig(CONFIG);
+        getAdditionalConfigPaths().forEach(configPath -> configPath.setConfig(CONFIG));
+        ITEM_CONFIG = new ItemBuilderConfigPath(new PathString("display"), getDefaultItem());
+        ITEM_CONFIG.setConfig(CONFIG);
+    }
+
+    private IntegerConfigPath createAndSetConfigPath(String path, int defaultValue) {
+        IntegerConfigPath configPath = Paths.integerPath(new PathString(path), defaultValue);
+        configPath.setConfig(CONFIG);
+        return configPath;
+    }
+
+    private void setupStringReplacer() {
+        DISPLAY_ITEM.addStringReplacer(StringReplacer.of((original, uuid) -> {
+            SPlayer sPlayer = SPlayer.get(uuid);
+            String next = getLevel(sPlayer) >= getLimit() ? MainConfig.PLACEHOLDERS_NEXT_MAX.getValue() : getNextString(sPlayer);
+            String price = getLevel(sPlayer) >= getLimit() ? MainConfig.PLACEHOLDERS_SKILL_PRICE_MAX.getValue() : Integer.toString(getPrice().getValue());
+            String prev = getPreviousString(sPlayer);
+            String cooldownNext = getCoolDownNextString(sPlayer);
+            String cooldownPrev = getCoolDownPreviousString(sPlayer);
+            String level = Integer.toString(getLevel(sPlayer));
+            String limit = Integer.toString(getLimit());
+            String upgrade = Integer.toString(getUpgrade().getValue());
+            String incrementedUpgrade = Integer.toString(getIncrementedUpgrade().getValue());
+
+            return original.replace("{next}", next != null ? next : "N/A")
+                    .replace("{price}", price != null ? price : "N/A")
+                    .replace("{prev}", prev != null ? prev : "N/A")
+                    .replace("{cooldownnext}", cooldownNext != null ? cooldownNext : "N/A")
+                    .replace("{cooldownprev}", cooldownPrev != null ? cooldownPrev : "N/A")
+                    .replace("{level}", level != null ? level : "N/A")
+                    .replace("{limit}", limit != null ? limit : "N/A")
+                    .replace("{upgrade}", upgrade != null ? upgrade : "N/A")
+                    .replace("{incremented-upgrade}", incrementedUpgrade != null ? incrementedUpgrade : "N/A");
+        }));
+    }
+
     public int getLimit() {
         return GET_LIMIT.getValue();
     }
+
     public void setLimit(int Level) {
         GET_LIMIT.setValue(Level, getConfig());
     }
@@ -150,6 +162,7 @@ public abstract class Skill implements Listener {
     public final SkillConfig getConfig() {
         return CONFIG;
     }
+
     public ItemStack getDisplayItem(Player player) {
         return DISPLAY_ITEM.build(player.getUniqueId());
     }
@@ -157,6 +170,10 @@ public abstract class Skill implements Listener {
     public abstract String getPreviousString(SPlayer player);
 
     public abstract String getNextString(SPlayer player);
+
+    public abstract String getCoolDownPreviousString(SPlayer player);
+
+    public abstract String getCoolDownNextString(SPlayer player);
 
     public void enable() {
         // EMPTY
@@ -191,7 +208,7 @@ public abstract class Skill implements Listener {
     }
 
     public boolean isWorldRestricted(Player player) {
-        List<String> list = isWorldRestrictedS.getValue();
+        List<String> list = isWorldRestricted.getValue();
         if (list.isEmpty()) {
             return false;
         }
@@ -203,7 +220,7 @@ public abstract class Skill implements Listener {
     }
 
     public boolean isWorldRestricted(World world) {
-        List<String> list = isWorldRestrictedS.getValue();
+        List<String> list = isWorldRestricted.getValue();
         if (list.isEmpty()) {
             return false;
         }
@@ -212,7 +229,6 @@ public abstract class Skill implements Listener {
         }
         return !list.contains(world.getName());
     }
-
 
     public boolean isSkillDisabled() {
         return GET_DISABLED.getValue();

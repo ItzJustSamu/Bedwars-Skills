@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.itzjustsamu</groupId>
-    <artifactId>BedwarsSkills-BedWars</artifactId>
-    <version>1.0</version>
-    <name>BedwarsSkills-BedWars</name>
+    <artifactId>BedwarsSkills</artifactId>
+    <version>1.1</version>
+    <name>BedwarsSkills</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -16,7 +16,7 @@
     </properties>
 
     <build>
-        <finalName>BedwarsSkills-BedWars</finalName>
+        <finalName>BedwarsSkills</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
@@ -90,6 +90,10 @@
             <url>https://repo.codemc.io/repository/maven-public/</url>
             <layout>default</layout>
         </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -109,6 +113,12 @@
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
             <version>9.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.2</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>me.hsgamer</groupId>

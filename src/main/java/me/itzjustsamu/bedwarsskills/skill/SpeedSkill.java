@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 public class SpeedSkill extends Skill implements Listener {
 
     public SpeedSkill(BedWarsSkills plugin) {
-        super(plugin, "Speed", "speed", 10, 9);
+        super(plugin, "Speed", "speed", 10, 10);
         startSpeedUpdateTask();
     }
 
@@ -124,6 +124,16 @@ public class SpeedSkill extends Skill implements Listener {
     public String getNextString(SPlayer player) {
         double speed = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(speed);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 
 }

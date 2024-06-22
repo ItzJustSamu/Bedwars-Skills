@@ -26,7 +26,7 @@ import java.util.*;
 public class WoodReturnSkill extends Skill {
 
     public WoodReturnSkill(BedWarsSkills plugin) {
-        super(plugin, "Wood Return", "wood return", 20, 11);
+        super(plugin, "Wood Return", "wood return", 20, 12);
     }
 
     @EventHandler
@@ -120,5 +120,15 @@ public class WoodReturnSkill extends Skill {
     public String getNextString(SPlayer player) {
         double chance = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(chance);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

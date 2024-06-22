@@ -8,7 +8,7 @@ import org.bukkit.plugin.Plugin;
 
 public class MessageConfig extends PathableConfig {
     public static final StringConfigPath PREFIX = new StringConfigPath(new PathString("prefix"), "&7[&cPlayerSkills&7]&r ");
-    public static final StringConfigPath MENU_isWorldRestricteds = new StringConfigPath(new PathString("menu-world-restriction"), "&cYou cannot modify your skills in your current location.");
+    public static final StringConfigPath MENU_isWorldRestricted = new StringConfigPath(new PathString("menu-world-restriction"), "&cYou cannot modify your skills in your current location.");
     public static final StringConfigPath XP_SYMBOL = new StringConfigPath(new PathString("xp-symbol"), "XP");
 
     public MessageConfig(Plugin plugin) {

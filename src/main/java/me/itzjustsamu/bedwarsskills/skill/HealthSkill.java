@@ -165,4 +165,14 @@ public class HealthSkill extends Skill {
         int hp = (getLevel(player) + 1) * getUpgrade().getValue();
         return Integer.toString(hp);
     }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
+    }
 }

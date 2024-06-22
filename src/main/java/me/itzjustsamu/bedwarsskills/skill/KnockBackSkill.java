@@ -25,7 +25,7 @@ import java.util.List;
 public class KnockBackSkill extends Skill {
 
     public KnockBackSkill(BedWarsSkills plugin) {
-        super(plugin, "Knockback", "knockback", 10, 6);
+        super(plugin, "Knockback", "knockback", 10, 7);
     }
 
     @EventHandler
@@ -117,5 +117,15 @@ public class KnockBackSkill extends Skill {
     public String getNextString(SPlayer player) {
         double knockback = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(knockback);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

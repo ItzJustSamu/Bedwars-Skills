@@ -25,7 +25,7 @@ import java.util.List;
 public class XPSkill extends Skill {
 
     public XPSkill(BedWarsSkills plugin) {
-        super(plugin, "XP", "xp", 20, 13);
+        super(plugin, "XP", "xp", 20, 14);
     }
 
     // Event handler for hit event
@@ -129,5 +129,15 @@ public class XPSkill extends Skill {
     public String getNextString(SPlayer player) {
         double xp = (getLevel(player) + 1) * getUpgrade().getValue();
         return Utils.getPercentageFormat().format(xp);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        return null;
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        return null;
     }
 }

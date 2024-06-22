@@ -45,7 +45,6 @@ public class DoubleJumpSkill extends Skill implements Listener {
 
     public DoubleJumpSkill(BedWarsSkills plugin) {
         super(plugin, "DoubleJump", "doublejump", 5, 4);
-        Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
@@ -176,7 +175,9 @@ public class DoubleJumpSkill extends Skill implements Listener {
                         "&7Level: &e{level}&7/&e{limit}&7",
                         " ",
                         "&cVelocity increase: ",
-                        "   &e{prev} &7 >>> &e{next}"
+                        "   &e{prev} &7 >>> &e{next}",
+                        "&cCooldown decrease: ",
+                        "   &e{cooldownprev} &7 >>> &e{cooldownnext}"
                 ));
     }
 
@@ -190,6 +191,18 @@ public class DoubleJumpSkill extends Skill implements Listener {
     public String getNextString(SPlayer player) {
         double jumpHeight = (getLevel(player) + 1) * getUpgrade().getValue();
         return String.valueOf(jumpHeight);
+    }
+
+    @Override
+    public String getCoolDownPreviousString(SPlayer player) {
+        long cooldown = Base_Cooldown_Time.getValue() - (getLevel(player) * Cooldown_Reduction_Per_Level.getValue());
+        return String.valueOf(cooldown / 1000L); // Convert to seconds
+    }
+
+    @Override
+    public String getCoolDownNextString(SPlayer player) {
+        long cooldown = Base_Cooldown_Time.getValue() - ((getLevel(player) + 1) * Cooldown_Reduction_Per_Level.getValue());
+        return String.valueOf(cooldown / 1000L); // Convert to seconds
     }
 
     private void sendActionBar(Player player, long remainingTime) {

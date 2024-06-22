@@ -56,21 +56,7 @@ public class BedWarsSkills extends BasePlugin {
 
     @Override
     public void enable() {
-        registerSkill(new AcrobatSkill(this));
-        registerSkill(new ArcherySkill(this));
-        registerSkill(new CriticalsSkill(this));
-        registerSkill(new DodgeSkill(this));
-        registerSkill(new DoubleJumpSkill(this));
-        registerSkill(new WoolReturnSkill(this));
-        registerSkill(new HealthSkill(this));
-        registerSkill(new KnockBackSkill(this));
-        registerSkill(new LacerateSkill(this));
-        registerSkill(new ResistanceSkill(this));
-        registerSkill(new SpeedSkill(this));
-        registerSkill(new StrengthSkill(this));
-        registerSkill(new WoodReturnSkill(this));
-        registerSkill(new WoolReturnSkill(this));
-        registerSkill(new XPSkill(this));
+        registerSkills();
 
         registerCommand(new SkillsCommand(this));
         registerCommand(new SkillsAdminCommand(this));
@@ -79,8 +65,26 @@ public class BedWarsSkills extends BasePlugin {
         registerListener(new MenuController());
         registerListener(new PlayerListener());
 
-        Updater updater = new Updater(this, 113626);
+        Updater updater = new Updater(this, 117236);
         updater.checkForUpdates();
+
+    }
+    private void registerSkills() {
+        registerSkill(new AcrobatSkill(this));
+        registerSkill(new ArcherySkill(this));
+        registerSkill(new CriticalsSkill(this));
+        registerSkill(new DodgeSkill(this));
+        registerSkill(new DoubleJumpSkill(this));
+        registerSkill(new WoolReturnSkill(this));
+        registerSkill(new HealthSkill(this));
+        registerSkill(new KillRewardsSkill(this));
+        registerSkill(new KnockBackSkill(this));
+        registerSkill(new LacerateSkill(this));
+        registerSkill(new ResistanceSkill(this));
+        registerSkill(new SpeedSkill(this));
+        registerSkill(new StrengthSkill(this));
+        registerSkill(new WoodReturnSkill(this));
+        registerSkill(new XPSkill(this));
     }
 
     @Override

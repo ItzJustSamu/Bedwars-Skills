@@ -35,7 +35,7 @@ public class MainConfig extends PathableConfig {
     // Skill-related configurations
 
     public static final BooleanConfigPath OPTIONS_VERBOSE = new BooleanConfigPath(new PathString("options", "verbose"), false);
-    public static final StringListConfigPath OPTIONS_MENU_isWorldRestricteds = new StringListConfigPath(new PathString("options", "menu-world-restriction"), Collections.emptyList());
+    public static final StringListConfigPath OPTIONS_MENU_isWorldRestricted = new StringListConfigPath(new PathString("options", "menu-world-restriction"), Collections.emptyList());
     static BedWarsSkills plugin;
 
     public static final ConfigPath<PlayerStorage> OPTIONS_PLAYER_STORAGE = new StickyConfigPath<>(
